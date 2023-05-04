@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{{ "<!-- layouts/_default/baseof.html -->" | safeHTML }}
+<html>
+    {{ partial "head.html" . }}
+    <body>
+        <header>
+            {{ partial "header.html" . }}
+        </header>
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+        <footer>
+            {{ partial "footer.html" . }}
+        </footer>
+    </body>
+</html>
+

@@ -1,0 +1,24 @@
+{
+  "name": "hugo-bs-template",
+  "version": "1.0.0",
+  "description": "A template for a website using bootstrap and hugo.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run hugo:build",
+    "serve": "npm run hugo:serve",
+    "hugo:build": "hugo",
+    "hugo:serve": "hugo serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.3.0-alpha3",
+    "hugo-bin": "^0.102.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
+  }
+}
