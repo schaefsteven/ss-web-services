@@ -1,0 +1,8 @@
+{{ define "main" }}
+    {{ "<!-- layouts/projects/single.html -->" | safeHTML }}
+    <h1>{{.Title}}</h1>
+    <span class="github-link">
+        <a target="_blank" href="{{ .Params.github }}">View this project on Github</a>
+    </span>
+    {{ .Content }}
+{{ end }}
