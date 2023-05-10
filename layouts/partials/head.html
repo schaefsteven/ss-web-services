@@ -7,4 +7,5 @@
     {{ $postCssOpt := (dict "use" "autoprefixer") }}
     {{ $style := $sass | toCSS $toCssOpt | postCSS $postCssOpt }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+    <script type="module" src="/js/main.js"></script>
 </head>
