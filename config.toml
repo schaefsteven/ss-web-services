@@ -6,3 +6,11 @@ title = 'SS Web Services'
             wrapStandAloneImageWithinParagraph = false
     [markup.goldmark.renderer]
          unsafe = true
+
+[module]
+    [[module.mounts]]
+        source="static"
+        target="static"
+    [[module.mounts]]
+        source="node_modules"
+        target="static/node_modules"
