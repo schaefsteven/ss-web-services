@@ -1,15 +1,21 @@
 {{ define "main" }}
     {{ "<!-- layouts/projects/single.html -->" | safeHTML }}
-    <h1>{{.Title}}</h1>
-    <ul>
-        <li>
-            View this project on <a target="_blank" href="{{ .Params.github }}">Github</a>
-        </li>
-        {{ with .Params.liveDemo }}
-            <li>
-                View this project live at: <a target="_blank" href="{{ . }}">{{ . }}</a>
-            </li>
-        {{ end }}
-    </ul>
-    {{ .Content }}
+    <section class="py-4">
+        <div class="container-xxl">
+            <h1 class="ms-3">{{.Title}}</h1>
+            <ul class="list-unstyled ms-4">
+                <li>
+                    View this project on <a target="_blank" href="{{ .Params.github }}">Github</a>
+                </li>
+                {{ with .Params.liveDemo }}
+                    <li>
+                        View this project live at: <a target="_blank" href="{{ . }}">{{ . }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+            <article class="markdown">
+                {{ .Content }}
+            </article>
+        </div>
+    </section>
 {{ end }}

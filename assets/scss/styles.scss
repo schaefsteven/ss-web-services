@@ -67,3 +67,38 @@ $utilities: map-merge(
 main > section:nth-child(even) {
     @extend .bg-dark-subtle;
 }
+
+.show .navbar-nav > li {
+    border-bottom: 1px solid $gray-900;
+    border-top: 1px solid $gray-900;
+}
+
+article.markdown {
+    @extend .bg-dark-subtle;
+    @extend .p-4;
+    @extend .fs-5;
+}
+
+article.markdown img {
+    max-height: 800px;
+    max-width: Min(650px, 100%);
+    width: auto;
+}
+
+.img-wrapper {
+    max-width: Min(650px, 100%);
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    @extend .me-md-4;
+    @extend .mb-4;
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .align-items-center;
+    @extend .text-body-secondary;
+    @extend .fs-6;
+}
+
+article.markdown p {
+    @extend .text-body-secondary;
+}

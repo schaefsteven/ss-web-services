@@ -9,10 +9,10 @@ This is a program that can solve any valid sudoku puzzle. It is written in Pytho
 
 A typical sudoku puzzle has only one solution and this program will find it. However, it is possible to give the program a puzzle that has multiple solutions. In this case, the program will stop at the first solution it finds and display it to you. Finally, it is possible to give the program a puzzle that does not have any solutions. In this case, the program will notify you that no solutions exist and leave the puzzle as you input it.
 
-![sudoku solver with no input](empty.PNG)
-![sudoku solver with an unsolved puzzle](before-solve.PNG)
-![sudoku solver with a solved puzzle](after-solve.PNG)
-![sudoku solver showing no-solutions message](no-solutions.PNG)
+![sudoku solver with no input](empty.PNG "This is the app when you open it before any input.")
+![sudoku solver with an unsolved puzzle](before-solve.PNG "Example of a puzzle entered into the app")
+![sudoku solver with a solved puzzle](after-solve.PNG "After clicking solve, if the app is able to solve the puzzle, it displays it like this.")
+![sudoku solver showing no-solutions message](no-solutions.PNG "If there are no solutions to the puzzle, the app will display this message." )
 
 ## Algorithms
 
