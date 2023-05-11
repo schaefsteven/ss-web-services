@@ -8,6 +8,8 @@ $body-color-dark: #FFF;
 $primary: #FE9C1C;
 $secondary: #000;
 
+$footer-height: 3rem;
+
 // $link-color-dark: $primary;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
@@ -48,6 +50,16 @@ $utilities: map-merge(
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // 8. Add additional custom code here
+
+body {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
 
 .text-emphasis-1 {
     @extend .text-primary;
