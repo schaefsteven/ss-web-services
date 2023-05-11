@@ -19,10 +19,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-underline">
-                    {{ $currentPage := .Section }}
+                    {{ $currentSection := .Section }}
                     {{ range .Site.Menus.main }}
                         <li class="nav-item text-center">
-                            <a class="nav-link{{ if eq $currentPage .Page.Section }} active{{ end }}" href="{{ .URL }}">{{ .Title }}</a>
+                            <a class="nav-link{{ if eq $currentSection .Page.Section }} active{{ end }}" href="{{ .URL }}">{{ .Title }}</a>
                         </li>
                     {{ end }}
                 </ul>
