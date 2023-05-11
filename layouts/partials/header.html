@@ -18,13 +18,13 @@
                 <span class="navbar-toggler-icon text-primary"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="list-inline-item">
-                        <a class="text-decoration-none" href="/">Home</a>
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     {{ range .Site.Sections }}
-                        <li class="list-inline-item">
-                            <a class="text-decoration-none" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
                         </li>
                     {{ end }}
                 </ul>
