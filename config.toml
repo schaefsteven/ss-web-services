@@ -1,5 +1,7 @@
 title = 'SS Web Services'
 
+summaryLength = 30
+
 [markup]
     [markup.goldmark]
         [markup.goldmark.parser]
