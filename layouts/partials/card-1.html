@@ -1,6 +1,8 @@
 {{"<!-- layouts/partials/card-1.html -->" | safeHTML }}
 <div class="col-5 card me-md-3 mw-50 bg-dark-subtle">
-    <img class="card-img-top" src="/images/cn-mockup.webp" alt="">
+    {{ with .Resources.GetMatch "cover*" }}
+        <img class="card-img-top" src="{{ .RelPermalink }}" alt="">
+    {{ end }}
     <div class="card-body">
         <h3 class="card-title">{{ .Title }}</h3>
         <p class="card-text">{{ .Summary }}</p>
