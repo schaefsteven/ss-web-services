@@ -92,12 +92,12 @@ article.markdown {
 
 article.markdown img {
     max-height: 800px;
-    max-width: Min(650px, 100%);
+    max-width: Min(1200px, 100%);
     width: auto;
 }
 
 .img-wrapper {
-    max-width: Min(650px, 100%);
+    max-width: Min(1200px, 100%);
     width: fit-content;
     border-radius: 1rem;
     background-color: rgba(0, 0, 0, 0.2);

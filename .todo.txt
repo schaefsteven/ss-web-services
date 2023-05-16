@@ -1,7 +1,0 @@
-arrows on projects scroller on home
-list pages
-blog post
-blog single
-previous/next blog post/project 
-consultation button
-footer info
