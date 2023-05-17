@@ -1,2 +1,2 @@
 {{ $newLevel := math.Min (add .Level 1) 6 }}
-<h{{ $newLevel }}>{{ .Text }}</h{{ $newLevel }}>
+<h{{ $newLevel }}>{{ .Text | safeHTML }}</h{{ $newLevel }}>

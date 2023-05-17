@@ -1,6 +1,5 @@
 arrows on projects scroller on home
 list pages
-blog single
 previous/next blog post/project 
 consultation button
 footer info
