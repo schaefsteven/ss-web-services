@@ -1,5 +1,4 @@
-{{"<!-- layouts/partials/card-1.html -->" | safeHTML }}
-<div class="col-10 col-md-5 card me-3 bg-dark-subtle">
+<div class="card bg-dark-subtle h-100">
     {{ with .Resources.GetMatch "cover*" }}
         <img class="card-img-top" src="{{ .RelPermalink }}" alt="Cover Image">
     {{ end }}

@@ -32,7 +32,7 @@
         <div class="container-xxl">
             <h2 class="my-3">My portfolio</h2>
             <div class="d-flex flex-nowrap overflow-auto">
-                {{ range where .Site.RegularPages "Section" "projects" }}
+                {{ range where .Site.RegularPages "Section" "portfolio" }}
                     {{ partial "card-1.html" . }}
                 {{ end }}
             </div>

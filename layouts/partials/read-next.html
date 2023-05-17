@@ -1,0 +1,15 @@
+<div class="container-xxl">
+    <h2 class="mb-3">Read Next</h2>
+    <div class="row gy-4">
+        <div class="col">
+            {{ with .NextInSection }}
+                {{ partial "card-2" . }}
+            {{ end }}
+        </div>
+        <div class="col">
+            {{ with .PrevInSection }}
+                {{ partial "card-2" . }}
+            {{ end }}
+        </div>
+    </div>
+</div>

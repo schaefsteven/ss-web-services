@@ -1,9 +1,12 @@
 {{ define "main" }}
-    {{ "<!-- layouts/projects/single.html -->" | safeHTML }}
+    {{ "<!-- layouts/portfolio/single.html -->" | safeHTML }}
     <section class="py-4">
         <div class="container-xxl">
             {{ partial "single-header-1" . }}
             {{ partial "single-content-1" . }}
         </div>
+    </section>
+    <section class="py-4">
+        {{ partial "read-next" . }}
     </section>
 {{ end }}
