@@ -1,7 +1,7 @@
 ---
 title: "My First Three Months on Linux"
 date: 2023-05-17T09:21:22-05:00
-draft: true
+draft: false
 ---
 # How it started
 
@@ -15,7 +15,7 @@ I decided I needed to try something else. GNOME was what was bothering me for th
 
 # Give me pain that I control
 
-Using vanilla Debian with i3 has not been sunshine and roses. There have been plenty of frustrating moments of not understanding how to fix something or why something isn't working. But I personally prefer this type of system because my problems are typically a situation of "I don't have a tool installed for this" instead of "the default tool for this doesn't do what I want it to." I find it much easier to install a solution when I come across a problem rather than having to figure out how to rip the default tool out of the DE, because you never know how tightly integrated that tool may be and what else you may be breaking when you do that. Not to mention that in many cases I couldn't figure out **what** component of a DE was even responsible for a behavior that I didn't want. 
+Using vanilla Debian with i3 has not been sunshine and roses. There have been plenty of frustrating moments of not understanding how to fix something or why something isn't working. But I personally prefer this type of system because my problems are typically a situation of "I don't have a tool installed for this" instead of "the default tool for this doesn't do what I want it to." I find it much easier to install a solution when I come across a problem rather than having to figure out how to rip the default tool out of the DE, because you never know how tightly integrated that tool may be and what else you may be breaking when you do that. Not to mention that in many cases I couldn't figure out *what* component of a DE was even responsible for a behavior that I didn't want. 
 
 # What I'm loving about Linux
 
@@ -39,6 +39,6 @@ There are some other weird problems that you might run into on Linux. I had a lo
 
 # Conclusion
 
-I'm very glad I made the switch. I was quite hesitant at first, but I've fallen in love with the practice of slowly honing in my system and my configuration for **my** computer. It's not the way for everyone(for now), but I hope for a future where we start to see more adoption of Linux and open-source software. 
+I'm very glad I made the switch. I was quite hesitant at first, but I've fallen in love with the practice of slowly honing in my system and my configuration for *my* computer. It's not the way for everyone(for now), but I hope for a future where we start to see more adoption of Linux and open-source software. 
 
 If you have any questions or comments about this, or would like to tell me how you use your system and recommend me some tools, feel free to reach out! 

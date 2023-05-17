@@ -1,34 +1,9 @@
 {{ define "main" }}
-    {{ "<!-- layouts/projects/single.html -->" | safeHTML }}
+    {{ "<!-- layouts/blog/single.html -->" | safeHTML }}
     <section class="py-4">
         <div class="container-xxl">
-            <div class="px-0 container-fluid d-lg-flex">
-                <div class="px-3 pt-3 bg-black col-lg-4 d-flex flex-column justify-content-center">
-                    <h1 class="mx-3">{{.Title}}</h1>
-                    <ul class="list-unstyled mx-4">
-                        <li>
-                            View this project on <a target="_blank" href="{{ .Params.github }}">Github</a>
-                        </li>
-                        {{ with .Params.liveDemo }}
-                            <li>
-                                View this project live at: <a target="_blank" href="{{ . }}">{{ . }}</a>
-                            </li>
-                        {{ end }}
-                    </ul>
-                </div>
-                <div class="col-lg-8">
-                    {{ with .Resources.GetMatch "cover*" }}
-                        <img 
-                            class="img-fluid" 
-                            src="{{ .RelPermalink }}" 
-                            alt="Image of software project"
-                        >
-                    {{ end }}
-                </div>
-            </div>
-            <article class="markdown">
-                {{ .Content }}
-            </article>
+            {{ partial "single-header-1" . }}
+            {{ partial "single-content-1" . }}
         </div>
     </section>
 {{ end }}

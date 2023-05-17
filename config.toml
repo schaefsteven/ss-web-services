@@ -8,6 +8,8 @@ summaryLength = 30
             wrapStandAloneImageWithinParagraph = false
     [markup.goldmark.renderer]
          unsafe = true
+    [markup.highlight]
+        style = "modus-vivendi"
 
 [module]
     [[module.mounts]]

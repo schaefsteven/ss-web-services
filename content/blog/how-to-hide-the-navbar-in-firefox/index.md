@@ -26,13 +26,21 @@ Now we can go into fullscreen mode and it effectively just hides the navbar. How
 
 There are other solutions out there to achieve similar results, but there are reasons why I've chosen this method. First of all, all the other methods that I've come across are permanent, so you can't un-hide the navbar. With my method, F11 shows/hides the navbar. I've encountered situations where certain extensions such as Bitwarden will break if the navbar is permanently hidden with some modification to userChrome.css. Also, my method works whether or not you have the bookmarks toolbar hidden, or whatever other configurations you have made to the navbar area. 
 
+##### This is an h5
+
+This is content below the h5
+
+###### This is an h6
+
+This is content below the h6
+
 # Disabling the hot edge
 
 Once we've done the above configurations, we are very close to our desired behavior, but there are some additional things we can do to make it better. By default in fullscreen mode, moving the cursor to the top edge of the screen will auto-unhide the navbar. I find this extremely annoying, especially because the navbar of most websites is also at the top, so I will constantly overshoot the site's navbar, which unhides Firefox's navbar, which moves the web page down, etc. Also, since we set `full-screen-api.ignore-widgets = true`, the top of Firefox is no longer necessarily the top of the screen. For instance in i3, the border of the window is not considered part of firefox, so to un-hide the navbar with the mouse, your cursor has to be on the exact right row of pixels. Quite annoying. 
 
 We can disable this auto-hide/auto-unhide behaviour altogether with this addition to your userChrome.css file: 
 
-```
+``` css
 /* Disables the "hot edge" at the top of the screen in fullscreen mode that will
  * automatically show the navbar on hover. Use F11 to toggle the navbar instead */
 #fullscr-toggler {

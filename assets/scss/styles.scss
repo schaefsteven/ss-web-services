@@ -8,9 +8,7 @@ $body-color-dark: #FFF;
 $primary: #FE9C1C;
 $secondary: #000;
 
-$footer-height: 3rem;
-
-// $link-color-dark: $primary;
+$code-color: #48E91D;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
@@ -66,6 +64,18 @@ footer {
     font-weight: bold;
 }
 
+p > code {
+    background-color: black;
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+}
+
+pre {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border-radius: 1rem;
+}
+
 .section-1 {
     @extend .py-md-5;
     @extend .py-2;
@@ -88,6 +98,8 @@ article.markdown {
     @extend .bg-dark-subtle;
     @extend .p-4;
     @extend .fs-5;
+    max-width: 1000px;
+    line-height: 2.2rem;
 }
 
 article.markdown img {
