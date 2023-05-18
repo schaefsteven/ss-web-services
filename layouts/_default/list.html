@@ -1,8 +1,13 @@
 {{ define "main" }}
     {{"<!-- layouts/_default/list.html-->" | safeHTML }}
-    <ul>
-        {{ range .Pages }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
+    <h1 class="display-3 my-3 text-center d-md-none">{{ .Title }}</h1>
+    <section class="section-1">
+        <div class="container-xxl px-sm-5">
+            <div class="row gy-4">
+                {{ range .Pages }}
+                    {{ partial "card-2" . }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
 {{ end }}

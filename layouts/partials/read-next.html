@@ -2,22 +2,18 @@
     <h2 class="mb-3 ms-3">Read Next</h2>
     <div class="row gy-4">
         {{ if gt (len .CurrentSection.Pages) 2 }}
-            <div class="col-md-6">
-                {{ with .NextInSection }}
-                    {{ partial "card-2" . }}
-                {{ else }}
-                    {{ with .PrevInSection.PrevInSection }}
-                        {{ partial "card-2" . }}
-                    {{ end }}
-                {{ end }}
-            </div>
-        {{ end }}
-        <div class="col-md-6">
-            {{ with .PrevInSection }}
+            {{ with .NextInSection }}
                 {{ partial "card-2" . }}
             {{ else }}
-                {{ partial "card-2" (index .CurrentSection.Pages 0) }}
-            {{ end }} 
-        </div>
+                {{ with .PrevInSection.PrevInSection }}
+                    {{ partial "card-2" . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ with .PrevInSection }}
+            {{ partial "card-2" . }}
+        {{ else }}
+            {{ partial "card-2" (index .CurrentSection.Pages 0) }}
+        {{ end }} 
     </div>
 </div>

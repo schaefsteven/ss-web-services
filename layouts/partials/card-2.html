@@ -1,10 +1,5 @@
-<div class="card bg-dark-subtle h-100">
-    {{ with .Resources.GetMatch "cover*" }}
-        <img class="card-img-top" src="{{ .RelPermalink }}" alt="Cover Image">
-    {{ end }}
-    <div class="card-body">
-        <h3 class="card-title">{{ .Title }}</h3>
-        <p class="card-text">{{ .Summary }}</p>
-        <a class="align-self-center text-center d-block" href="{{ .RelPermalink }}">view more</a>
+<div class="col-md-6">
+    <div class="card bg-dark-subtle h-100">
+        {{ partial "card-content-1" . }}
     </div>
 </div>

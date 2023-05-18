@@ -1,0 +1,8 @@
+{{ with .Resources.GetMatch "cover*" }}
+    <img class="card-img-top" src="{{ .RelPermalink }}" alt="Cover Image">
+{{ end }}
+<div class="card-body">
+    <h3 class="card-title">{{ .Title }}</h3>
+    <p class="card-text">{{ .Summary }}</p>
+    <a class="align-self-center text-center d-block" href="{{ .RelPermalink }}">view more</a>
+</div>
