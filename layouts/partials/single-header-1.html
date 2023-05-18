@@ -12,6 +12,11 @@
                     View this project live at: <a target="_blank" href="{{ . }}">{{ . }}</a>
                 </li>
             {{ end }}
+            {{ if eq .Section "blog" }}
+                <li>
+                    Published on {{ .Date | time.Format ":date_long" }}
+                </li>
+            {{ end }}
         </ul>
     </div>
     <div class="col-lg-8">
