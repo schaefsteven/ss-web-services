@@ -1,4 +1,5 @@
 ---
+weight: 1
 title: Sudoku Solver
 date: 2023-04-17T15:13:47-05:00
 draft: false

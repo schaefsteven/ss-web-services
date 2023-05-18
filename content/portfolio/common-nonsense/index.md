@@ -1,4 +1,5 @@
 ---
+weight: 1
 title: "Common Nonsense"
 date: 2023-04-17T16:02:13-05:00
 draft: false
