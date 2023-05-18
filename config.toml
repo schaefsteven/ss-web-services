@@ -1,4 +1,5 @@
 title = 'SS Web Services'
+baseURL = 'https://ssweb.services/'
 
 summaryLength = 30
 
