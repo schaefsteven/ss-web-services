@@ -1,4 +1,4 @@
 arrows on projects scroller on home
-consultation button
+email button icons
 footer info
 
