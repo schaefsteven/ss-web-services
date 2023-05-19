@@ -38,6 +38,50 @@
                     {{ partial "card-1.html" . }}
                 {{ end }}
             </div>
+            <div class="row justify-content-center mx-auto my-auto">
+                <div id="recipeCarousel" data-bs-ride="carousel" class="carousel slide">
+                    <div class="carousel-inner" role="listbox">
+                        {{ range $index, $value := where .Site.RegularPages "Section" "portfolio" }}
+                            <div class="carousel-item {{ if (eq $index 0) }}active{{ end }}">
+                                <div class="col-md-3">
+                                    {{ partial "card-1.html" . }}
+                                </div>
+                            </div>
+                        {{ end }}
+                        {{ range $index, $value := where .Site.RegularPages "Section" "portfolio" }}
+                            <div class="carousel-item">
+                                <div class="col-3">
+                                    {{ partial "card-1.html" . }}
+                                </div>
+                            </div>
+                        {{ end }}
+                    </div>
+                    <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+            <script>
+                let items = document.querySelectorAll('.carousel .carousel-item')
+
+                items.forEach((el) => {
+                        const minPerSlide = 4
+                        let next = el.nextElementSibling
+                        for (var i=1; i<minPerSlide; i++) {
+                                    console.log('doing something');
+                                    if (!next) {
+                                                    // wrap carousel by using first child
+                                                    next = items[0]
+                                                }
+                                    let cloneChild = next.cloneNode(true)
+                                    el.appendChild(cloneChild.children[0])
+                                    next = next.nextElementSibling
+                                }
+                })
+            </script>
         </div>
     </section>
 {{ end }}
