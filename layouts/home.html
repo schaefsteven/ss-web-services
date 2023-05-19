@@ -31,9 +31,11 @@
         </div>
     </section>
     <section class="section-1">
-        <div class="container-xxl">
+        <div class="container-xxl menu-wrapper">
             <h2 class="my-3">My portfolio</h2>
-            <div class="d-flex flex-nowrap overflow-auto">
+            <button class="left-paddle paddle"><</button>
+            <button class="right-paddle paddle">></button>
+            <div class="d-flex flex-nowrap overflow-auto menu">
                 {{ range where .Site.RegularPages "Section" "portfolio" }}
                     {{ partial "card-1.html" . }}
                 {{ end }}
