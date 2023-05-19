@@ -1,6 +1,8 @@
 <a href="{{ .RelPermalink }}">
     {{ with .Resources.GetMatch "cover*" }}
-        <img class="card-img-top" src="{{ .RelPermalink }}" alt="Cover Image">
+        {{ $img := . }}
+        {{ $img := $img.Fit "800x800" }}
+        <img class="card-img-top" src="{{ $img.RelPermalink }}" alt="Cover Image">
     {{ end }}
 </a>
 <div class="card-body">
