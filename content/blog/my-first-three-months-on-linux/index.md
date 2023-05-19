@@ -19,7 +19,7 @@ Using vanilla Debian with i3 has not been sunshine and roses. There have been pl
 
 # What I'm loving about Linux
 
-I've fallen in love with my tiling window manager. I haven't decided if i3 is ultimately the one for me, but the efficient use of screen real estate is great. It was always frustrated in Windows (and GNOME) by how difficult it seemed to be just to see all of the stuff I wanted to see at once. Being able to instantly move between workspaces with keyboard shortcuts is fantastic.
+I've fallen in love with my tiling window manager. I haven't decided if i3 is ultimately the one for me, but the efficient use of screen real estate is great. I was always frustrated in Windows (and GNOME) by how difficult it seemed to be just to see all of the stuff I wanted to see at once. Being able to instantly move between workspaces with keyboard shortcuts is fantastic.
 
 Along with that, I've been developing a very comprehensive keyboard-centric workflow using i3, Rofi, Tridactyl on Firefox, Ranger, and Neovim. It feels like the right way to use a computer.
 
