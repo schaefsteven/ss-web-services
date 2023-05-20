@@ -1,4 +1,3 @@
-arrows on projects scroller on home
-email button icons
-footer info
+update ssweb.services page
+
 improve meta descriptions

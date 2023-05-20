@@ -145,3 +145,6 @@ article.markdown p {
     opacity: 0.1;
 }
 
+.paddle:hover:not(.disabled) {
+    opacity: 1;
+}
