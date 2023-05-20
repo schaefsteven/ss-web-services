@@ -9,7 +9,7 @@ liveDemo: https://commonnonsensemi.com
 
 Common Nonsense is a midwest-emo band from west Michigan. This website provides a place for them to showcase their music and a blog for them to tell their story and produce content on a platform that they control. 
 
-## Features
+# Features
 
 The site is built using [Hugo](https://gohugo.io/), a static site generator. 
 
