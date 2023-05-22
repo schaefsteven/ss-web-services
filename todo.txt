@@ -1,3 +1,4 @@
 try to reduce and minify css
 add "author" page for SEO
 improve meta descriptions
+comb through layouts for mistakes
