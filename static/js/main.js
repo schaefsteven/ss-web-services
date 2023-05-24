@@ -74,7 +74,7 @@ $('.menu').on('scroll', function() {
 }); 
 
 var getScrollRight = function() {
-    var scrollRight = getMenuPosition() + itemSize; 
+    var scrollRight = getMenuPosition() + itemSize + 10; 
     scrollRight = (Math.floor(scrollRight / itemSize)) * itemSize;
     return scrollRight;
 }
