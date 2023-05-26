@@ -1,7 +1,7 @@
-<div class="p-3 d-flex justify-content-center">
+<div class="col-md-4 p-3 d-flex justify-content-center align-items-center">
     {{ $profileImg := resources.GetMatch "images/linkedin-01.webp" }}
     {{ $profileImg := $profileImg.Fit "400x400" }}
-    <img class="img-fluid rounded-circle shadow-lg mw-100" 
+    <img class="rounded-circle shadow-lg mw-100" 
         src="{{ $profileImg.RelPermalink }}" 
         alt="Steven Schaefer"
     >
@@ -10,10 +10,10 @@
     <h2 class="">Who am I?</h2>
     <p class="fs-md-4 text-body-secondary">My name is Steven Schaefer. I am a web developer. I like to bring a creative spin to every project I work on. I have a passion for technology and try to make the world a better place with it.</p>
     <h2>Connect with me:</h2>
-    <a class="social-link" href="https://www.linkedin.com/in/stevenschaefersoftware/">
+    <a class="social-link" target="_blank" href="https://www.linkedin.com/in/stevenschaefersoftware/">
         <span class="bi bi-linkedin"></span> Linkedin
     </a>
-    <a class="social-link" href="https://github.com/schaefsteven">
+    <a class="social-link" target="_blank" href="https://github.com/schaefsteven">
         <span class="bi bi-github"></span> Github
     </a>
     {{ if eq .RelPermalink "/about/" }}
