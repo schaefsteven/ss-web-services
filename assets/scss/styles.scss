@@ -148,3 +148,10 @@ article.markdown p {
 .paddle:hover:not(.disabled) {
     opacity: 1;
 }
+
+.social-link {
+    @extend .text-decoration-none;
+    @extend .fs-5;
+    @extend .ms-3;
+    @extend .my-1;
+}
