@@ -12,7 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ .Site.Title }}: {{ .Title }}{{ with .Summary }} - {{ . }}{{ end }}">
-    <meta property="og:image" content="{{ resources.GetMatch "images/og-img.jpg" }}">
+    {{ $ogImg := resources.GetMatch "images/og-img.jpg" }}
+    <meta property="og:image" content="{{ $ogImg.Permalink }}">
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script defer src="/js/main.js"></script>
