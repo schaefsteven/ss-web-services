@@ -1,4 +1,11 @@
 <head>
+    <meta charset="UTF-8">
+
+    <!-- Title and Description -->
+    <title>{{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Site.Title }}: {{ .Title }}{{ with .Summary }} - {{ . }}{{ end }}">
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TB87EBMJQ"></script>
     <script>
@@ -8,18 +15,30 @@
 
       gtag('config', 'G-4TB87EBMJQ');
     </script>
-    <title>{{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ .Site.Title }}: {{ .Title }}{{ with .Summary }} - {{ . }}{{ end }}">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- OG image -->
     {{ $ogImg := resources.GetMatch "images/og-img.jpg" }}
     <meta property="og:image" content="{{ $ogImg.Permalink }}">
+
+    <!-- JS -->
     <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script defer src="/js/main.js"></script>
+
+    <!-- Style -->
     {{ $sass := resources.Get "scss/styles.scss" }}
     {{ $toCssOpt := (dict "includePaths" "node_modules" "targetPath" "/assets/css/styles.css") }}
     {{ $postCssOpt := (dict "use" "autoprefixer") }}
     {{ $style := $sass | toCSS $toCssOpt | postCSS $postCssOpt }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+
 </head>
