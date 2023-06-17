@@ -159,10 +159,6 @@ article.markdown p {
 .card-text * {
     display: none;
     margin: 0px !important;
-    font-size: inherit;
-    color: inherit;
-    pointer-events: none;
-    text-decoration: inherit;
 }
 
 .card-text {
@@ -177,6 +173,7 @@ article.markdown p {
             content: ": ";
         }
         display: inline;
+        font-size: inherit;
         font-weight: bold;
     }
 }
