@@ -19,3 +19,6 @@ summaryLength = 30
     [[module.mounts]]
         source="node_modules"
         target="static/node_modules"
+    [[module.mounts]]
+        source="favicon"
+        target="static"
