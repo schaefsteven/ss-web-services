@@ -1,4 +1,4 @@
 ---
 Title: About Me
-Menu: 
+type: about
 ---
