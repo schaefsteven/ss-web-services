@@ -1,0 +1,14 @@
+{{ $webPage := resources.GetRemote .Site.Params.reviewLink }}
+<br>
+{{ $reviewRegEx := `\\"([\w\s]+)\\",\\"https:\/\/lh3\.googleusercontent\.com.{0,150}?ago\\",null,\\"(.+?)\\",([\d])` }}
+{{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
+{{ range $reviews }}
+Stars: {{ index . 3 }}<br>
+Author: {{ index . 1 }}<br>
+{{ index . 2 }} 
+    <br>
+    <br>
+    <br>
+{{ end }}
+
+<!-- <p class="mw-100">{{ $webPage.Content }}</p> -->
