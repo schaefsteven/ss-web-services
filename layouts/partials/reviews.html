@@ -1,13 +1,19 @@
-{{ $webPage := resources.GetRemote .Site.Params.testLink }}
+{{ $webPage := resources.GetRemote .Site.Params.reviewLink }}
 <br>
-{{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"https:\/\/lh3\.googleusercontent\.com.{0,150}?ago\\",null,\\"(.+?)\\",([\d])` }}
+{{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"(https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70}).{0,100}?ago\\",null,\\"(.+?)\\",([\d])` }}
 {{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
 {{ range $reviews }}
-    {{ $stars := int (index . 3) }}
     {{ $author := index . 1 }}
-    {{ $content := replace (index . 2) "\\\\n" "\n" }} 
+    {{ $imgURL := index . 2 }}
+    {{ $authImg := resources.GetRemote $imgURL }}
+    {{ $content := replace (index . 3) "\\\\n" "\n" }} 
+    {{ $stars := int (index . 4) }}
     <h2 class="review-name">{{ $author }}</h2>
-    <!-- <span class="">Stars: {{$stars}}</span> -->
+    <img 
+        src="{{ $authImg.RelPermalink}}" 
+        alt="Reviewer profile image"
+        class="rounded-circle review-profile-img"
+    >
     <div class="review-stars">
         {{ range $count := (seq 5) }}
             <i class="bi bi-star-fill{{ if ( le . $stars ) }} filled{{ end }}"></i>
