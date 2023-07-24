@@ -42,6 +42,9 @@
                             <a 
                                 class="nav-link{{ if $active }} active{{ end }}"
                                 href="{{ .URL }}"
+                                {{ if eq .Title "Write a Review" }}
+                                    target="_blank"
+                                {{ end }}
                             >
                                 {{ .Title }}
                             </a>
