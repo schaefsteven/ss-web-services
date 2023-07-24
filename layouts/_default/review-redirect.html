@@ -1,7 +1,11 @@
 {{ define "main" }}
     <div class="section-1">
-        <div class="section-1-cont">
-            <h1>Redirecting you now...</h1>
+        <div class="section-1-cont d-flex flex-column align-items-center">
+            <h1 class="fs-4 text-body-secondary">Redirecting you now...</h1>
+            <span class="text-body-secondary mt-4">
+                If you aren't redirected automatically, 
+                <a id="redirect-link" href="">click here</a>.
+            </span>
             <script src="/js/review-redirect.js"></script>
         </div>
     </div>
