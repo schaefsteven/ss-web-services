@@ -19,10 +19,32 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-underline">
-                    {{ $currentSection := .Section }}
+                    <!-- 
+                        To identify the current page, we use .Section, but list 
+                        pages and the home page do not have a .Section, in which 
+                        case we use .Title instead. 
+                        This implementation currently breaks if a page which is 
+                        in a section is put on the menu. That link will be 
+                        marked as active if you are on any page in the same
+                        section.
+                    -->
+                    {{ $identifier := .Section }}
+                    {{ if eq $identifier "" }}
+                        {{ $identifier = .Title }}
+                    {{ end }} 
                     {{ range .Site.Menus.main }}
+                        {{ $navIdentifier := .Page.Section }}
+                        {{ if eq $navIdentifier "" }}
+                            {{ $navIdentifier = .Page.Title }}
+                        {{ end }}
+                        {{ $active := eq $identifier $navIdentifier }}
                         <li class="nav-item text-center">
-                            <a class="nav-link{{ if eq $currentSection .Page.Section }} active{{ end }}" href="{{ .URL }}">{{ .Title }}</a>
+                            <a 
+                                class="nav-link{{ if $active }} active{{ end }}"
+                                href="{{ .URL }}"
+                            >
+                                {{ .Title }}
+                            </a>
                         </li>
                     {{ end }}
                 </ul>
