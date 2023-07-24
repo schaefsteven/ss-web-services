@@ -1,13 +1,18 @@
-{{ $webPage := resources.GetRemote .Site.Params.reviewLink }}
+{{ $webPage := resources.GetRemote .Site.Params.testLink }}
 <br>
 {{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"https:\/\/lh3\.googleusercontent\.com.{0,150}?ago\\",null,\\"(.+?)\\",([\d])` }}
 {{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
 {{ range $reviews }}
-    {{ $stars := index . 3 }}
+    {{ $stars := int (index . 3) }}
     {{ $author := index . 1 }}
     {{ $content := replace (index . 2) "\\\\n" "\n" }} 
     <h2 class="review-name">{{ $author }}</h2>
-    <span class="review-stars">Stars: {{$stars}}</span>
+    <!-- <span class="">Stars: {{$stars}}</span> -->
+    <div class="review-stars">
+        {{ range $count := (seq 5) }}
+            <i class="bi bi-star-fill{{ if ( le . $stars ) }} filled{{ end }}"></i>
+        {{ end }}
+    </div>
     <p class="review-body">{{ $content }}</p>
 {{ end }}
 

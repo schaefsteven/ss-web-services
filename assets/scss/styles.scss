@@ -9,6 +9,7 @@ $primary: #FE9C1C;
 $secondary: #000;
 
 $code-color: #48E91D;
+$custom-grey: #777D81;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../node_modules/bootstrap/scss/variables";
@@ -179,4 +180,11 @@ article.markdown p {
         display: inline;
         font-weight: bold;
     }
+}
+
+.bi-star-fill {
+    color: $custom-grey;
+}
+.bi-star-fill.filled {
+    color: $primary;
 }
