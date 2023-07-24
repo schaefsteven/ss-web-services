@@ -3,7 +3,7 @@ baseURL = 'https://ssweb.services/'
 
 [params]
     reviewLink = 'https://www.google.com/maps/place/SS+Web+Services/@36.9727211,-86.5023633,12z/data=!4m8!3m7!1s0x25cbf542c4ac53a7:0xb285fced4a3e4390!8m2!3d36.9727495!4d-86.4199629!9m1!1b1!16s%2Fg%2F11v03dq8wd?hl=en-US&entry=ttu'
-    testLink = 'https://www.google.com/maps/place/Warren+County+Health+Department/@36.9910426,-86.4464391,17z/data=!3m1!4b1!4m6!3m5!1s0x8865ef347520ad7b:0x1618cfe6ccbcd89a!8m2!3d36.9910426!4d-86.4438642!16s%2Fg%2F1tdc5z8x?hl=en-US&entry=ttu' 
+    testLink = "https://www.google.com/maps/place/Anna's+Greek+Restaurant/@36.989784,-86.444706,17z/data=!4m8!3m7!1s0x8865e879ba064f2d:0x71efedd0254473df!8m2!3d36.989784!4d-86.444706!9m1!1b1!16s%2Fg%2F1tjs5p7j?hl=en-US&entry=ttu" 
 
 summaryLength = 30
 
