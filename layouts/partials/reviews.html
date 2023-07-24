@@ -1,25 +1,50 @@
 {{ $webPage := resources.GetRemote .Site.Params.reviewLink }}
-<br>
+
 {{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"(https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70}).{0,100}?ago\\",null,\\"(.+?)\\",([\d])` }}
 {{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
-{{ range $reviews }}
-    {{ $author := index . 1 }}
-    {{ $imgURL := index . 2 }}
-    {{ $authImg := resources.GetRemote $imgURL }}
-    {{ $content := replace (index . 3) "\\\\n" "\n" }} 
-    {{ $stars := int (index . 4) }}
-    <h2 class="review-name">{{ $author }}</h2>
-    <img 
-        src="{{ $authImg.RelPermalink}}" 
-        alt="Reviewer profile image"
-        class="rounded-circle review-profile-img"
-    >
-    <div class="review-stars">
-        {{ range $count := (seq 5) }}
-            <i class="bi bi-star-fill{{ if ( le . $stars ) }} filled{{ end }}"></i>
-        {{ end }}
-    </div>
-    <p class="review-body">{{ $content }}</p>
-{{ end }}
+<div class="reviews-heading p-2 pe-md-3 p-lg-4 d-flex flex-column justify-content-center">
+    <h2 class="mb-3">Client Reviews</h2>
+    <span class="text-body-secondary mb-2">
+        Here is what some of my clients have said about my work.
+    </span>
+    <!-- <span class="text-body-secondary mb-2">
+        If you are one of my clients, please 
+        <a 
+            target="_blank"
+            href="{{ .Site.Params.reviewSubmitLink }}"
+        >
+            leave me a review!
+        </a>
+    </span> -->
+</div>
+<div class="row g-3">
+    {{ range $reviews }}
+        {{ $author := index . 1 }}
+        {{ $imgURL := index . 2 }}
+        {{ $authImg := resources.GetRemote $imgURL }}
+        {{ $content := replace (index . 3) "\\\\n" "\n" }} 
+        {{ $stars := int (index . 4) }}
+        <div class="col-md-6 col-12">
+            <div class="card p-3 h-100 bg-dark-subtle">
+                <div class="mb-3 d-flex">
+                    <img 
+                        src="{{ $authImg.RelPermalink}}" 
+                        alt="Reviewer profile image"
+                        class="rounded-circle review-profile-img"
+                    >
+                    <div class="ms-3 d-flex flex-column justify-content-center">
+                        <h3 class="review-name">{{ $author }}</h3>
+                        <div class="review-stars">
+                            {{ range $count := (seq 5) }}
+                                <i class="bi bi-star-fill{{ if ( le . $stars ) }} filled{{ end }}"></i>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <p class="review-body text-body-secondary">{{ $content }}</p>
+            </div>
+        </div>
+    {{ end }}
+</div>
 
 <!-- <p class="mw-100">{{ $webPage.Content }}</p> -->

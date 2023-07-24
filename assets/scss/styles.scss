@@ -182,6 +182,13 @@ article.markdown p {
     }
 }
 
+.reviews-heading {
+    @media screen and (min-width: 768px) {
+        max-width: 350px;
+    }
+    width: 100%;
+}
+
 .bi-star-fill {
     color: $custom-grey;
 }
