@@ -3,12 +3,12 @@
 {{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"https:\/\/lh3\.googleusercontent\.com.{0,150}?ago\\",null,\\"(.+?)\\",([\d])` }}
 {{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
 {{ range $reviews }}
-Stars: {{ index . 3 }}<br>
-Author: {{ index . 1 }}<br>
-{{ replace (index . 2) "\\\\n" "\n" | htmlUnescape }} 
-    <br>
-    <br>
-    <br>
+    {{ $stars := index . 3 }}
+    {{ $author := index . 1 }}
+    {{ $content := replace (index . 2) "\\\\n" "\n" }} 
+    <h2 class="review-name">{{ $author }}</h2>
+    <span class="review-stars">Stars: {{$stars}}</span>
+    <p class="review-body">{{ $content }}</p>
 {{ end }}
 
 <!-- <p class="mw-100">{{ $webPage.Content }}</p> -->
