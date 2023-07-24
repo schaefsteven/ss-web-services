@@ -2,29 +2,22 @@
 
 {{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"(https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70}).{0,100}?ago\\",null,\\"(.+?)\\",([\d])` }}
 {{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
-<div class="reviews-heading p-2 pe-md-3 p-lg-4 d-flex flex-column justify-content-center">
-    <h2 class="mb-3">Client Reviews</h2>
-    <span class="text-body-secondary mb-2">
-        Here is what some of my clients have said about my work.
-    </span>
-    <!-- <span class="text-body-secondary mb-2">
-        If you are one of my clients, please 
-        <a 
-            target="_blank"
-            href="{{ .Site.Params.reviewSubmitLink }}"
-        >
-            leave me a review!
-        </a>
-    </span> -->
-</div>
 <div class="row g-3">
+    <div class="col-md-6 col-lg-4 col-12">
+        <div class="h-100 reviews-heading p-2 pe-md-3 p-lg-4 d-flex flex-column justify-content-center">
+            <h2 class="mb-3">Client Reviews</h2>
+            <span class="text-body-secondary mb-2">
+                Here is what some of my clients have said about my work.
+            </span>
+        </div>
+    </div>
     {{ range $reviews }}
         {{ $author := index . 1 }}
         {{ $imgURL := index . 2 }}
         {{ $authImg := resources.GetRemote $imgURL }}
         {{ $content := replace (index . 3) "\\\\n" "\n" }} 
         {{ $stars := int (index . 4) }}
-        <div class="col-md-6 col-12">
+        <div class="col-md-6 col-lg-4 col-12">
             <div class="card p-3 h-100 bg-dark-subtle">
                 <div class="mb-3 d-flex">
                     <img 
@@ -45,6 +38,19 @@
             </div>
         </div>
     {{ end }}
+    <div class="col-md-6 col-lg-4 col-12">
+        <div class="h-100 reviews-heading py-0 px-2 pxe-md-3 px-lg-4 d-flex flex-column justify-content-center">
+            <span class="text-body-secondary mb-2">
+                If you are one of my clients, please 
+                <a 
+                    target="_blank"
+                    href="{{ .Site.Params.reviewSubmitLink }}"
+                >
+                    leave me a review!
+                </a>
+            </span>
+        </div>
+    </div>
 </div>
 
 <!-- <p class="mw-100">{{ $webPage.Content }}</p> -->
