@@ -15,4 +15,15 @@
         </div>
     </div>
 </div>
+<!-- This article was used in order to get Nextcloud to allow itself to be displayed in an iframe: https://return2.net/nextcloud-enable-external-iframe/
+Set this rule in /mnt/pool0/nextcloud/data/html/lib/public/AppFramework/Http
+
+    protected $allowedFrameAncestors = [
+            '\'self\'',
+            'http://localhost:1313',
+            'https://ssweb.services'
+    ];
+
+Used the Breeze Dark theme in order to create custom CSS for the public upload page
+-->
 {{ end }}
