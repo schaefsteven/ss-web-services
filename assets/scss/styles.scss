@@ -215,3 +215,28 @@ article.markdown p {
     height: 500px;
     border-radius: 20px;
 }
+
+/*
+For the Upload widget, this CSS is being used in Nextcloud's Theming settings
+@media only screen and (max-height: 510px){
+  #body-public footer {
+    display: none;
+  }
+
+  #body-public #header {
+    display: none;
+  }
+
+  #body-public #content {
+    margin-top: 0px;
+    height: 100%;
+  }
+
+  #body-public #public-upload #emptycontent {
+    margin-top: 10vh;
+  }
+  #body-public #public-upload #emptycontent h2 {
+    display: none;
+  }
+}
+*/
