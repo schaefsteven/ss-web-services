@@ -1,0 +1,16 @@
+<!-- Grab the repo owner/name out of the URL -->
+{{ $repo := replaceRE "https://github.com" "" .Params.github }}
+<!-- Tack the repo owner/name onto the Github raw URL -->
+{{ $rawURL := printf "https://raw.githubusercontent.com%s/main" $repo }}
+<!-- Tack README on the end -->
+{{ $readmeURL := printf "%s/README.md" $rawURL }}
+<!-- Grab the readme markdown -->
+{{ $readme := resources.GetRemote $readmeURL }}
+<!-- Fix relative paths in the readme and make them absolute -->
+{{ $regex := `!\[([^\]]*)\]\((\.)` }}
+{{ $replacement := printf "![$1](%s" $rawURL }}
+{{ $readme = replaceRE $regex $replacement $readme.Content }} 
+<!-- Remove the h1 -->
+{{ $readme = replaceRE `^# .*?\n` "" $readme }}
+<!-- Finally, print out the markdown -->
+{{ $readme | markdownify }}

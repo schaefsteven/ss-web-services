@@ -6,13 +6,8 @@
             <div class=" p-0 container-fluid bg-dark-subtle d-flex justify-content-center">
                 <article class="markdown">
                     {{ .Content }}
-                    {{ $repo := replaceRE "https://github.com" "" .Params.github }}
-                    {{ $rawURL := printf "https://raw.githubusercontent.com%s/main" $repo }}
-                    {{ $readmeURL := printf "%s/README.md" $rawURL }}
                     {{ if .Params.showGhReadme }}
-                        {{ $readme := resources.GetRemote $readmeURL }}
-                        {{ $readme = replaceRE `!\[([^\]]*)\]\((\.)` (printf "![$1](%s" $rawURL) $readme.Content }} 
-                        {{ $readme | markdownify }}
+                        {{ partial "ghreadme" . }}
                     {{ end }}
                 </article>
             </div>
