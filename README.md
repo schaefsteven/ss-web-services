@@ -1,6 +1,6 @@
 # SS Web Services
 
-You can View this site at [ssweb.services](https://ssweb.services)
+View this site at [ssweb.services](https://ssweb.services)
 
 ## Features
 
