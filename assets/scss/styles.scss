@@ -105,15 +105,31 @@ main > section:nth-child(even) {
 article.markdown {
     @extend .bg-dark-subtle;
     @extend .p-4;
+    @extend .pt-5;
     @extend .fs-5;
     max-width: Min(100%, 1000px);
     line-height: 2.2rem;
-}
-
-article.markdown img {
-    max-height: 800px;
-    max-width: Min(1200px, 100%);
-    width: auto;
+    h2 {
+        @extend .mt-5;
+        @extend .mb-3;
+        width: 100%;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $custom-grey;
+    }
+    h3 {
+        @extend .mt-5;
+    }
+    p {
+        @extend .text-body-secondary;
+        &:first-child {
+            @extend .fs-4;
+        }
+    }
+    img {
+        max-height: 800px;
+        max-width: Min(1200px, 100%);
+        width: auto;
+    }
 }
 
 .img-wrapper {
@@ -128,10 +144,6 @@ article.markdown img {
     @extend .align-items-center;
     @extend .text-body-secondary;
     @extend .fs-6;
-}
-
-article.markdown p {
-    @extend .text-body-secondary;
 }
 
 .paddle {

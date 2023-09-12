@@ -1,4 +1,7 @@
 {{ $img := .Page.Resources.Get .Destination }}
+{{ if not $img }}
+    {{ $img = resources.GetRemote .Destination }}
+{{ end }}
 {{ $img := $img.Fit "1200x1200 webp" }}
 <div class="img-wrapper">
     <img src="{{ $img.RelPermalink }}" alt="{{ .Text }}"/>
