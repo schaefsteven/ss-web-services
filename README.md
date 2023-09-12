@@ -1,5 +1,8 @@
 # SS Web Services
+
 View this site at [ssweb.services](https://ssweb.services)
+
+This site was created to help showcase the work of SS Web Services and reach new clients. It's designed to be performant and easy to maintain. I created the design for the site from scratch and I'm quite happy with how it turned out!
 
 ## Features
 
