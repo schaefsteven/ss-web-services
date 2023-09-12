@@ -12,5 +12,7 @@
 {{ $readme = replaceRE $regex $replacement $readme.Content }} 
 <!-- Remove the h1 -->
 {{ $readme = replaceRE `^# .*?\n` "" $readme }}
+<!-- Remove the demo link -->
+{{ $readme = replaceRE `^View this .*?\n` "" $readme }}
 <!-- Finally, print out the markdown -->
 {{ $readme | markdownify }}
