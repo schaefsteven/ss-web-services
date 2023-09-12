@@ -9,6 +9,12 @@
     <a class="text-reset text-decoration-none" href="{{ .RelPermalink }}">
         <h3 class="card-title">{{ .Title }}</h3>
     </a>
-    <div class="card-text mb-2">{{ .Content | truncate 200 }}</div>
+    <div class="card-text mb-2">
+        {{ $summary := .Content }}
+        {{ if .Params.showGhReadme }}
+            {{ $summary = print $summary (partial "ghreadme" .) }}
+        {{ end }}
+        {{ $summary | markdownify | truncate 200 }}
+    </div>
     <a class="align-self-center text-center d-block" href="{{ .RelPermalink }}">view more</a>
 </div>
