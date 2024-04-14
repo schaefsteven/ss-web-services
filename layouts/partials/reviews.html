@@ -1,6 +1,44 @@
 {{ $webPage := resources.GetRemote .Site.Params.reviewLink }}
 
-{{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"(https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70}).{0,100}?ago\\",null,\\"(.+?)\\",([\d])` }}
+<!-- Old regex pattern {{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"(https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70}).{0,100}?ago\\",null,\\"(.+?)\\",([\d])` }} -->
+{{ $reviewRegEx := `\\"([^\\]{1,30}?)\\",\\"(https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70}).{500,800}1\],\[\[([\d]).+?\"\],\[\[\\"(.+?)\\",null,` }}
+<!-- Step by step explaination of regex pattern:
+
+    String before author name:
+    \\"
+
+    Capture group for author name:
+    ([^\\]{1,30}?)
+
+    String *between* author name and image URL:
+    \\",\\"
+
+    Capture group for image URL:
+    (https:\/\/lh3\.googleusercontent\.com[^\\"]{0,70})
+
+    500-800 characters until stars number
+    .{500,800}
+
+    String before stars number:
+    1\],\[\[
+
+    Capture group for stars number:
+    ([\d])
+
+    Any number of characters until content:
+    .+?
+
+    String before content:
+    \"\],\[\[\\"
+
+    Capture group for content:
+    (.+?)
+
+    String at end of content:
+    \\",null, 
+
+-->
+
 {{ $reviews := findRESubmatch $reviewRegEx $webPage.Content }}
 <div class="row g-3">
     <div class="col-md-6 col-lg-4 col-12">
@@ -16,8 +54,8 @@
         {{ $imgURL := index . 2 }}
         {{ $authImg := resources.GetRemote $imgURL }}
         {{ $authImg := $authImg.Fit "90x90" }}
-        {{ $content := replace (index . 3) "\\\\n" "\n" }} 
-        {{ $stars := int (index . 4) }}
+        {{ $content := replace (index . 4) "\\\\n" "\n" }} 
+        {{ $stars := int (index . 3) }}
         <div class="col-md-6 col-lg-4 col-12">
             <div class="card p-3 h-100 bg-dark-subtle">
                 <div class="mb-3 d-flex">
