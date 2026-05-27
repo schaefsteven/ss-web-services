@@ -20,7 +20,7 @@
         </ul>
     </div>
     <div class="col-lg-8">
-        {{ with .Resources.GetMatch "cover*" }}
+        {{ with .Resources.GetMatch "cover.{jpg,jpeg,png,webp}" }}
             <img 
                 class="img-fluid" 
                 src="{{ .RelPermalink }}" 
